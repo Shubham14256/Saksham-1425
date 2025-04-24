@@ -1,0 +1,1150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saksham@SS</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+      * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Amazon Ember', Arial, sans-serif;
+        }
+
+        /* Primary Navbar */
+        .navbar-primary {
+            /* background-color: #131921 !important; */
+            height: 60px;
+            padding: 0;
+            background-color: #0056c1;
+        }
+
+        .navbar-expand-lg {
+            background-color: #0056c1;
+        }
+        .navbar-brand img {
+            height: 21pxpx;
+            width: 52pxpx;
+            padding: 5px;
+            margin-left: 10px;
+            border: 1px solid transparent;
+        }
+
+        .navbar-brand img:hover {
+            border: 1px solid white;
+            border-radius: 2px;
+        }
+
+        .navbar-address {
+            color: white;
+            padding: 10px 9px;
+            margin-left: 5px;
+            border: 1px solid transparent;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .navbar-address:hover {
+            border: 1px solid white;
+            border-radius: 2px;
+        }
+
+        .navbar-address p {
+            font-size: 12px;
+            line-height: 14px;
+            margin: 0;
+        }
+
+        .navbar-address p:first-child {
+            color: #cccccc;
+        }
+
+        .navbar-address p:last-child {
+            font-weight: bold;
+        }
+
+        .search-form {
+            flex-grow: 1;
+            max-width: 900px;
+            margin: 0 10px;
+            display: flex;
+        }
+
+        .search-select {
+            background-color: #f3f3f3;
+            border-radius: 4px 0 0 4px;
+            border-right: 1px solid #ddd;
+            width: auto;
+        }
+
+        .search-input {
+            border-radius: 0;
+            height: 40px;
+            flex-grow: 1;
+        }
+
+        .search-button {
+            background-color: #febd69;
+            border-color: #f3a847;
+            border-radius: 0 4px 4px 0;
+            width: 45px;
+            height: 40px;
+        }
+
+        .search-button:hover {
+            background-color: #f3a847;
+        }
+
+        .nav-language {
+            color: white;
+            padding: 10px 5px;
+            border: 1px solid transparent;
+            cursor: pointer;
+        }
+
+        .nav-language:hover {
+            border: 1px solid white;
+            border-radius: 2px;
+        }
+
+        .account-dropdown {
+            color: white;
+            padding: 10px 9px;
+            border: 1px solid transparent;
+            cursor: pointer;
+        }
+
+        .account-dropdown:hover {
+            border: 1px solid white;
+            border-radius: 2px;
+        }
+
+        .account-dropdown .dropdown-toggle {
+            color: white;
+            background: none;
+            border: none;
+            padding: 0;
+            text-align: left;
+        }
+
+        .account-dropdown .dropdown-toggle::after {
+            display: none;
+        }
+
+        .account-dropdown .account-line1 {
+            font-size: 12px;
+        }
+
+        .account-dropdown .account-line2 {
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .nav-cart {
+            color: white;
+            padding: 10px 9px;
+            border: 1px solid transparent;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-cart:hover {
+            border: 1px solid white;
+            border-radius: 2px;
+        }
+
+        .cart-icon {
+            font-size: 20px;
+        }
+
+        .cart-text {
+            font-size: 14px;
+            font-weight: bold;
+            margin-top: 12px;
+        }
+
+        .cart-count {
+            color: #f08804;
+            font-weight: bold;
+            margin-left: 5px;
+        }
+
+        /* Secondary Navbar */
+        .navbar-secondary {
+            /* background-color: #232f3e !important; */
+            color: white;
+            height: 40px;
+            background-color: #4286db;
+        }
+
+        .navbar-secondary a {
+            color: white;
+            font-size: 14px;
+            padding: 8px 9px;
+            border: 1px solid transparent;
+            text-decoration: none;
+        }
+
+        .navbar-secondary a:hover {
+            border: 1px solid white;
+            border-radius: 2px;
+        }
+
+        /* Dropdown Menu */
+        .dropdown-menu {
+            border-radius: 0;
+            border: 1px solid #ddd;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        .dropdown-item {
+            padding: 8px 16px;
+            font-size: 14px;
+        }
+
+        .dropdown-item:hover {
+            background-color: #f7f7f7;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 992px) {
+            .navbar-address, .nav-language, .account-dropdown, .nav-cart {
+                padding: 5px;
+                font-size: smaller;
+            }
+            
+            .search-form {
+                margin: 10px 0;
+            }
+        }
+      * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+      }
+
+      body {
+          font-family: 'Amazon Ember', Arial, sans-serif;
+          background-color: #f3f3f3;
+      }
+
+      .hero-section {
+          position: relative;
+          max-width: 1500px;
+          margin: 0 auto;
+          height: 400px;
+          overflow: hidden;
+      }
+
+      .hero-carousel {
+          display: flex;
+          width: 100%;
+          height: 100%;
+          transition: transform 0.5s ease-in-out;
+      }
+
+      .hero-slide {
+          min-width: 100%;
+          height: 100%;
+          position: relative;
+      }
+
+      .hero-slide img {
+          width: 100%;
+          height: ;
+          object-fit: cover;
+      }
+
+      .hero-content {
+          position: absolute;
+          top: 50%;
+          left: 50px;
+          transform: translateY(-50%);
+          color: white;
+          background-color: rgba(0, 0, 0, 0.6);
+          padding: 20px;
+          border-radius: 5px;
+          max-width: 400px;
+      }
+
+      .hero-content h2 {
+          font-size: 28px;
+          margin-bottom: 10px;
+      }
+
+      .hero-content p {
+          font-size: 16px;
+          margin-bottom: 15px;
+      }
+
+      .hero-btn {
+          display: inline-block;
+          padding: 10px 20px;
+          background-color: #FF9900;
+          color: #111;
+          text-decoration: none;
+          font-weight: bold;
+          border-radius: 3px;
+          transition: background-color 0.3s;
+      }
+
+      .hero-btn:hover {
+          background-color: #f0c14b;
+      }
+
+      .carousel-controls {
+          position: absolute;
+          top: 50%;
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+          transform: translateY(-50%);
+          padding: 0 20px;
+      }
+
+      .carousel-control {
+          background-color: rgba(0, 0, 0, 0.5);
+          color: white;
+          border: none;
+          width: 40px;
+          height: 60px;
+          font-size: 24px;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 3px;
+      }
+
+      .carousel-control:hover {
+          background-color: rgba(0, 0, 0, 0.7);
+      }
+
+      .carousel-indicators {
+          position: absolute;
+          bottom: 20px;
+          left: 50%;
+          transform: translateX(-50%);
+          display: flex;
+          gap: 10px;
+      }
+
+      .indicator {
+          width: 12px;
+          height: 12px;
+          border-radius: 50%;
+          background-color: rgba(255, 255, 255, 0.5);
+          cursor: pointer;
+      }
+
+      .indicator.active {
+          background-color: white;
+      }
+  </style>
+  <style >
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Amazon Ember', Arial, sans-serif;
+    }
+    
+    body {
+        background-color: #f3f3f3;
+        padding: px;
+    }
+    
+    .container {
+        max-width: 1500px;
+        margin: 0 auto;
+    }
+    
+    .section-title {
+        font-size: 21px;
+        font-weight: bold;
+        margin-bottom: 15px;
+        color: #0F1111;
+    }
+    
+    .cards-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 15px;
+    }
+    
+    .product-card {
+        background-color: white;
+        border-radius: 4px;
+        padding: 20px;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        transition: transform 0.2s, box-shadow 0.2s;
+        cursor: pointer;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .product-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    
+    .card-header {
+        margin-bottom: 15px;
+    }
+    
+    .card-title {
+        font-size: 18px;
+        font-weight: bold;
+        color: #0F1111;
+        margin-bottom: 5px;
+    }
+    
+    .card-subtitle {
+        font-size: 14px;
+        color: #565959;
+        margin-bottom: 10px;
+    }
+    
+    .card-image {
+        width: 100%;
+        height: 200px;
+        object-fit: contain;
+        margin-bottom: 15px;
+    }
+    
+    .card-items {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        margin-bottom: 15px;
+    }
+    
+    .card-item {
+        font-size: 14px;
+        color: #0F1111;
+    }
+    
+    .see-more {
+        color: #007185;
+        font-size: 13px;
+        margin-top: auto;
+        text-decoration: none;
+        display: inline-block;
+    }
+    
+    .see-more:hover {
+        color: #C7511F;
+        text-decoration: underline;
+    }
+    
+    .deal-badge {
+        background-color: #CC0C39;
+        color: white;
+        font-size: 12px;
+        padding: 3px 8px;
+        border-radius: 3px;
+        display: inline-block;
+        margin-bottom: 5px;
+    }
+</style>
+</head>
+<body>
+    <header>
+        <!-- <div class="navbar",class ="  navbar navbar-expand-lg">
+            <div class="nav-logo border">
+                <div class="logo">
+                    <img src="https://www.remove.bg/upload" alt="Saksham" height="50px" width="100px">
+                </div>
+            </div>
+            <div class="nav-address border">
+                <p class="add-first">Deliver To</p>
+                <div class="add-icon">
+                    <p class="add-second">
+                        <i class="fa-solid fa-location-dot"></i>
+                        India
+                    </p>
+                </div>
+            </div>
+            <div class="nav-search">
+                <section class="search-select">
+                    <div class="dropdown">
+                        <button class="dropbtn">All</button>
+                        <div class="dropdown-content">
+                        <a href="http://127.0.0.1:5500/Electronics.html">Electronics</a>
+                            <a href="#">Books</a>
+                            <a href="#">Clothing</a>
+                            <a href="#">Home & Kitchen</a>
+                        </div>
+                    </div>
+                </section>
+                <input placeholder="Search Saksham" class="search-input">
+                <div class="search-icon">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+            </div>
+            <div class="country-select">
+                <select id="country-select">
+                    <option value="en">EN</option>
+                    <option value="fr">FR</option>
+                    <option value="de">DE</option>
+                </select>
+            </div>
+            <div class="account-dropdown">
+                <button class="dropbtn" onclick="openAccountDropdown()">Hello, Sign in<br>Account & Lists</button>
+                <div class="dropdown-content" id="accountDropdown">
+                    <a href="#">Your Orders</a>
+                    <a href="#">Your Account</a>
+                    <a href="#">Wishlist</a>
+                    <a href="#" onclick="openSignInModal()">Sign In</a>
+                    <a href="#" onclick="openCreateAccountModal()">Create Account</a>
+                </div>
+            </div>
+            <div id="signInModal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <form>
+                        <label for="username">Username:</label>
+                        <input type="text" id="username" name="username" placeholder="Enter username here" required>
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" name="password" placeholder="Enter password here" required>
+                        <button type="submit">Sign In</button>
+                    </form>
+                </div>
+            </div>
+            <div id="createAccountModal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <form>
+                        <label for="newUsername">Username:</label>
+                        <input type="text" id="newUsername" name="newUsername" placeholder="Enter username here" required>
+                        <label for="newPassword">Password:</label>
+                        <input type="password" id="newPassword" name="newPassword" placeholder="Enter password here" required>
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" placeholder="Enter email here" required>
+                        <button type="submit">Create Account</button>
+                    </form>
+                </div>
+            </div>
+            <div class="cart" class="cta-button">
+                <a href="cart.html" class="cart-link">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span class="cart-count">0</span>
+                    <span class="cart-text">Cart</span>
+                </a>
+            </div>
+        </div>
+        <div class="nav2">
+            <div class="Deals">Todays Deals</div>
+            <div class="services">Customer Services</div>
+            <div class="Gift-card">Gift Card</div>
+            <div class="Sell">Sell</div>
+        </div> -->
+        <!-- <nav class="navbar navbar-expand-lg bg-body-primary" style="background-color: #007185;;">
+            <div class="container-fluid bg-body-primary" >
+              <a class="navbar-brand" href="#">
+                <img src="https://www.remove.bg/upload" alt="Saksham" height="50px" width="100px">
+              </a>
+              <div class="navbar-address">
+                <p class="mb-0">Deliver To</p>
+                <p class="mb-0">
+                  <i class="fa-solid fa-location-dot"></i> India
+                </p>
+              </div>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarContent">
+                <ul class="navbar-nav me-auto">
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">All</a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="http://127.0.0.1:5500/Index.html1">Electronics</a></li>
+                      <li><a class="dropdown-item" href="#">Books</a></li>
+                      <li><a class="dropdown-item" href="#">Clothing</a></li>
+                      <li><a class="dropdown-item" href="#">Home & Kitchen</a></li>
+                    </ul>
+                  </li>
+                  <form class="d-flex ms-3">
+                    <input class="form-control me-2" type="search" placeholder="Search Saksham" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">
+                      <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                  </form>
+                </ul>
+                <div class="d-flex align-items-center">
+                  <select class="form-select me-3" style="width: auto;">
+                    <option value="en">EN</option>
+                    <option value="fr">FR</option>
+                    <option value="de">DE</option>
+                  </select>
+                  <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Hello, Sign in<br>Account & Lists</button>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Your Orders</a></li>
+                      <li><a class="dropdown-item" href="#">Your Account</a></li>
+                      <li><a class="dropdown-item" href="#">Wishlist</a></li>
+                      <li><a class="dropdown-item" href="#">Sign In</a></li>
+                      <li><a class="dropdown-item" href="#">Create Account</a></li>
+                    </ul>
+                  </div>
+                  <a href="cart.html" class="btn btn-outline-primary d-flex align-items-center ms-3">
+                    <i class="fa-solid fa-cart-shopping me-1"></i>
+                    <span>Cart</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </nav>
+          <div class="navbar-secondary bg-light py-2" style="#007185;;">
+            <div class="container-fluid d-flex justify-content-around">
+              <a class="text-decoration-none" href="#">Today's Deals</a>
+              <a class="text-decoration-none" href="#">Customer Services</a>
+              <a class="text-decoration-none" href="#">Gift Card</a>
+              <a class="text-decoration-none" href="#">Sell</a>
+            </div>
+          </div>
+           -->
+        <!-- <div class="hero">
+            <img src="https://m.media-amazon.com/images/I/71w+qp51UyL._SX3000_.jpg" alt="img">
+            <div class="hero-text">
+                <h1></h1>
+                <p>You are on saksham.com</p>
+                <button>Shop Now</button>
+            </div>
+        </div>
+        <div class="gw-card-layout" data-grid-breakpoint="sm" data-flow-dir="h" class="a-section a-spacing-none gw-card-layout">
+            <div class="card1">
+                <div class="desktop-grid-1">
+                    <h2>PC'S</h2>
+                    <img src="https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Events/2023/EBF23/Fuji_Desktop_Single_image_EBF_1x_v1._SY304_CB573698005_.jpg" alt="img" height="180px" width="160px">
+                </div>
+            </div>
+        </div>
+        <div> -->
+            <!-- Call to Action Button -->
+            <nav class="navbar navbar-expand-lg ">
+              <div class="container-fluid">
+                  <a class="navbar-brand" href="#">
+                      <img src="https://www.sakshamoffice.com/wp-content/uploads/2023/09/Saksham-Logo-Final.png" alt="Saksham" height="50px" width="100px">
+                  </a>
+                  <div class="navbar-address">
+                      <p class="mb-0">Deliver To</p>
+                      <p class="mb-0">
+                          <i class="fa-solid fa-location-dot"></i> India
+                      </p>
+                  </div>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarContent">
+                      <ul class="navbar-nav me-auto">
+                          <li class="nav-item dropdown">
+                              <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">All</a>
+                              <ul class="dropdown-menu">
+                                  <li><a class="dropdown-item" href="http://127.0.0.1:5500/Index.html1">Electronics</a></li>
+                                  <li><a class="dropdown-item" href="#">Books</a></li>
+                                  <li><a class="dropdown-item" href="#">Clothing</a></li>
+                                  <li><a class="dropdown-item" href="#">Home & Kitchen</a></li>
+                              </ul>
+                          </li>
+                          <form class="d-flex ms-3 search-form">
+                              <select class="form-select search-select">
+                                  <option>All</option>
+                                  <option>Electronics</option>
+                                  <option>Books</option>
+                                  <option>Clothing</option>
+                              </select>
+                              <input class="form-control search-input" type="search" placeholder="Search Saksham" aria-label="Search">
+                              <button class="btn search-button" type="submit">
+                                  <i class="fa-solid fa-magnifying-glass"></i>
+                              </button>
+                          </form>
+                      </ul>
+                      <div class="d-flex align-items-center">
+                          <div class="nav-language">
+                              <select class="form-select" style="width: auto; background: none; color: white; border: none;">
+                                  <option value="en">EN</option>
+                                  <option value="fr">FR</option>
+                                  <option value="de">DE</option>
+                              </select>
+                          </div>
+                          <div class="account-dropdown dropdown">
+                              <button class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                  <div class="account-line1">Hello, Sign in</div>
+                                  <div class="account-line2">Account & Lists</div>
+                              </button>
+                              <ul class="dropdown-menu">
+                                  <li><a class="dropdown-item" href="#">Your Orders</a></li>
+                                  <li><a class="dropdown-item" href="#">Your Account</a></li>
+                                  <li><a class="dropdown-item" href="#">Wishlist</a></li>
+                                  <li><hr class="dropdown-divider"></li>
+                                  <li><a class="dropdown-item" href="#">Sign In</a></li>
+                                  <li><a class="dropdown-item" href="#">Create Account</a></li>
+                              </ul>
+                          </div>
+                          <div class="nav-cart">
+                              <div>
+                                  <i class="fa-solid fa-cart-shopping cart-icon"></i>
+                                  <span class="cart-text">Cart <span class="cart-count">0</span></span>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </nav>
+          <div class="navbar-secondary">
+              <div class="container-fluid d-flex">
+                  <a href="#"><i class="fa-solid fa-bars me-1"></i> All</a>
+                  <a href="#">Today's Deals</a>
+                  <a href="#">Customer Service</a>
+                  <a href="#">Gift Cards</a>
+                  <a href="#">Sell</a>
+              </div>
+          </div>
+      
+          <!-- Bootstrap JS -->
+          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+          <!-- Font Awesome JS -->
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+            <div class="hero-section">
+              <div class="hero-carousel">
+                  <div class="hero-slide">
+                      <img src="https://m.media-amazon.com/images/I/61CiqVTRBEL._SX3000_.jpg" alt="Deal of the Day">
+                      <div class="hero-content">
+                          <h2>Deal of the Day</h2>
+                          <p>Save up to 50% on selected items. Limited time offer!</p>
+                          <a href="#" class="hero-btn">Shop Now</a>
+                      </div>
+                  </div>
+                  <div class="hero-slide">
+                      <img src="https://m.media-amazon.com/images/I/61TD5JLGhIL._SX3000_.jpg" alt="New Arrivals">
+                      <div class="hero-content">
+                          <h2>New Arrivals</h2>
+                          <p>Discover the latest products in our collection.</p>
+                          <a href="#" class="hero-btn">Explore</a>
+                      </div>
+                      <div class="hero-slide">
+                        <img src="https://www.lalpathlabs.com/blog/wp-content/uploads/2019/01/Fruits-and-Vegetables.jpg" alt="Prime Members">
+                        <div class="hero-content">
+                            <h2>Prime Members</h2>
+                            <p>Exclusive benefits and fast delivery for Prime members.</p>
+                            <a href="#" class="hero-btn">Join Prime</a>
+                        </div>
+                    </div>
+                    <div class="hero-slide">
+                        <img src="<div class="hero-slide">
+                            <img src="https://www.lalpathlabs.com/blog/wp-content/uploads/2019/01/Fruits-and-Vegetables.jpg" alt="Prime Members">
+                            <div class="hero-content">
+                                <h2>Prime Members</h2>
+                                <p>Exclusive benefits and fast delivery for Prime members.</p>
+                                <a href="#" class="hero-btn">Join Prime</a>
+                            </div>
+                        </div><div class="hero-slide">
+                            <img src="https://www.lalpathlabs.com/blog/wp-content/uploads/2019/01/Fruits-and-Vegetables.jpg" alt="Prime Members">
+                            <div class="hero-content">
+                                <h2>Prime Members</h2>
+                                <p>Exclusive benefits and fast delivery for Prime members.</p>
+                                <a href="#" class="hero-btn">Join Prime</a>
+                            </div>
+                        </div><div class="hero-slide">
+                            <img src="https://www.lalpathlabs.com/blog/wp-content/uploads/2019/01/Fruits-and-Vegetables.jpg" alt="Prime Members">
+                            <div class="hero-content">
+                                <h2>Prime Members</h2>
+                                <p>Exclusive benefits and fast delivery for Prime members.</p>
+                                <a href="#" class="hero-btn">Join Prime</a>
+                            </div>
+                        </div><div class="hero-slide">
+                            <img src="https://www.lalpathlabs.com/blog/wp-content/uploads/2019/01/Fruits-and-Vegetables.jpg" alt="Prime Members">
+                            <div class="hero-content">
+                                <h2>Prime Members</h2>
+                                <p>Exclusive benefits and fast delivery for Prime members.</p>
+                                <a href="#" class="hero-btn">Join Prime</a>
+                            </div>
+                        </div>
+                        <div class="hero-slide">
+                            <img src="https://images.unsplash.com/photo-1606787366850-de6330128bfc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Prime Members">
+                            <div class="hero-content">
+                                <h2>Prime Members</h2>
+                                <p>Exclusive benefits and fast delivery for Prime members.</p>
+                                <a href="#" class="hero-btn">Join Prime</a>
+                            </div>
+                        </div>
+                  </div>
+                  <!-- <div class="hero-slide">
+                      <img src="https://m.media-amazon.com/images/I/71qid7QFWJL._SX3000_.jpg" alt="Prime Members">
+                      <div class="hero-content">
+                          <h2>Prime Members</h2>
+                          <p>Exclusive benefits and fast delivery for Prime members.</p>
+                          <a href="#" class="hero-btn">Join Prime</a>
+                      </div>
+                  </div> -->
+
+              </div>
+              <div class="carousel-controls">
+                  <button class="carousel-control prev">&#10094;</button>
+                  <button class="carousel-control next">&#10095;</button>
+              </div>
+              <div class="carousel-indicators">
+                  <div class="indicator active"></div>
+                  <div class="indicator"></div>
+                  <div class="indicator"></div>
+              </div>
+          </div>
+      
+          <script>
+              document.addEventListener('DOMContentLoaded', function() {
+                  const carousel = document.querySelector('.hero-carousel');
+                  const slides = document.querySelectorAll('.hero-slide');
+                  const prevBtn = document.querySelector('.prev');
+                  const nextBtn = document.querySelector('.next');
+                  const indicators = document.querySelectorAll('.indicator');
+                  
+                  let currentIndex = 0;
+                  const slideCount = slides.length;
+                  let autoSlideInterval;
+                  
+                  // Set up the carousel
+                  function updateCarousel() {
+                      carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+                      
+                      // Update indicators
+                      indicators.forEach((indicator, index) => {
+                          indicator.classList.toggle('active', index === currentIndex);
+                      });
+                  }
+                  
+                  // Next slide
+                  function nextSlide() {
+                      currentIndex = (currentIndex + 1) % slideCount;
+                      updateCarousel();
+                  }
+                  
+                  // Previous slide
+                  function prevSlide() {
+                      currentIndex = (currentIndex - 1 + slideCount) % slideCount;
+                      updateCarousel();
+                  }
+                  
+                  // Auto slide
+                  function startAutoSlide() {
+                      autoSlideInterval = setInterval(nextSlide, 5000);
+                  }
+                  
+                  function stopAutoSlide() {
+                      clearInterval(autoSlideInterval);
+                  }
+                  
+                  // Event listeners
+                  nextBtn.addEventListener('click', () => {
+                      nextSlide();
+                      stopAutoSlide();
+                      startAutoSlide();
+                  });
+                  
+                  prevBtn.addEventListener('click', () => {
+                      prevSlide();
+                      stopAutoSlide();
+                      startAutoSlide();
+                  });
+                  
+                  indicators.forEach((indicator, index) => {
+                      indicator.addEventListener('click', () => {
+                          currentIndex = index;
+                          updateCarousel();
+                          stopAutoSlide();
+                          startAutoSlide();
+                      });
+                  });
+                  
+                  // Start auto sliding
+                  startAutoSlide();
+                  
+                  // Pause on hover
+                  const heroSection = document.querySelector('.hero-section');
+                  heroSection.addEventListener('mouseenter', stopAutoSlide);
+                  heroSection.addEventListener('mouseleave', startAutoSlide);
+                  
+                  // Keyboard navigation
+                  document.addEventListener('keydown', (e) => {
+                      if (e.key === 'ArrowRight') {
+                          nextSlide();
+                          stopAutoSlide();
+                          startAutoSlide();
+                      } else if (e.key === 'ArrowLeft') {
+                          prevSlide();
+                          stopAutoSlide();
+                          startAutoSlide();
+                      }
+                  });
+                  
+                  // Touch support for mobile devices
+                  let touchStartX = 0;
+                  let touchEndX = 0;
+                  
+                  heroSection.addEventListener('touchstart', (e) => {
+                      touchStartX = e.changedTouches[0].screenX;
+                  });
+                  
+                  heroSection.addEventListener('touchend', (e) => {
+                      touchEndX = e.changedTouches[0].screenX;
+                      handleSwipe();
+                  });
+                  
+                  function handleSwipe() {
+                      if (touchEndX < touchStartX - 50) {
+                          nextSlide(); // Swipe left
+                      } else if (touchEndX > touchStartX + 50) {
+                          prevSlide(); // Swipe right
+                      }
+                      stopAutoSlide();
+                      startAutoSlide();
+                  }
+              });
+          </script>
+            <!-- <a href="#signup" class="cta-button">Sign Up Now</a>
+            Contact Form -->
+            <!-- <form action="/submit_form" method="post">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required></textarea>
+                <button type="submit">Submit</button>
+            </form> -->
+        </div>
+        <div class="container">
+          <!-- Zepto Fresh Vegetables Section -->
+          <div class="section-title">Fresh Vegetables | Up to 40% off</div>
+          <div class="cards-container">
+              <div class="product-card" onclick="window.location.href='vegetables.html'">
+                  <div class="card-header">
+                      <span class="deal-badge">Daily Deal</span>
+                      <div class="card-title">Farm Fresh Vegetables</div>
+                      <div class="card-subtitle">Direct from local farms</div>
+                  </div>
+                  <img src="https://www.lalpathlabs.com/blog/wp-content/uploads/2019/01/Fruits-and-Vegetables.jpg" alt="Fresh Vegetables" class="card-image">
+                  <div class="card-items">
+                      <div class="card-item">Organic Tomatoes</div>
+                      <div class="card-item">Fresh Potatoes</div>
+                      <div class="card-item">Leafy Greens</div>
+                      <div class="card-item">Seasonal Vegetables</div>
+                  </div>
+                  <a href="vegetables.html" class="see-more">See more</a>
+              </div>
+              
+              <!-- Zepto Groceries Section -->
+              <div class="product-card" onclick="window.location.href='groceries.html'">
+                  <div class="card-header">
+                      <span class="deal-badge">Best Seller</span>
+                      <div class="card-title">Daily Groceries</div>
+                      <div class="card-subtitle">Essentials delivered fast</div>
+                  </div>
+                  <img src="https://pluspng.com/img-png/grocery-items-png-enjoy-online-grocery-shopping-in-bhubaneswar-with-4-easy-steps-click-submit-pay-and-pick-up-2362.jpg" alt="Groceries" class="card-image">
+                  <div class="card-items">
+                      <div class="card-item">Rice & Pulses</div>
+                      <div class="card-item">Cooking Oil</div>
+                      <div class="card-item">Spices</div>
+                      <div class="card-item">Flour & Grains</div>
+                  </div>
+                  <a href="groceries.html" class="see-more">See more</a>
+              </div>
+              <div class="product-card" onclick="window.location.href='kitchen.html'">
+                <div class="card-header">
+                    <span class="deal-badge">Best Seller</span>
+                    <div class="card-title">Kitchen Accessories</div>
+                    <div class="card-subtitle">Essentials delivered fast</div>
+                </div>
+                <img src="https://th.bing.com/th/id/OIP.ODb7sPUZSlha0Z9kEPTUswHaHa?w=2500&h=2500&rs=1&pid=ImgDetMain" alt="Groceries" class="card-image">
+                <div class="card-items">
+                    <div class="card-item">Rice & Pulses</div>
+                    <div class="card-item">Cooking Oil</div>
+                    <div class="card-item">Spices</div>
+                    <div class="card-item">Flour & Grains</div>
+                </div>
+                <a href="kitchen.html" class="see-more">See more</a>
+            </div>
+              
+              <!-- Zepto Packaged Foods Section -->
+              <div class="product-card" onclick="window.location.href='packaged-foods.html'">
+                  <div class="card-header">
+                      <span class="deal-badge">New Arrivals</span>
+                      <div class="card-title">Packaged Foods</div>
+                      <div class="card-subtitle">Ready-to-eat & snacks</div>
+                  </div>
+                  <img src="https://thewashingtonstandard.com/wp-content/uploads/2017/12/packaged-goods.jpg" alt="Packaged Foods" class="card-image">
+                  <div class="card-items">
+                      <div class="card-item">Instant Noodles</div>
+                      <div class="card-item">Biscuits & Cookies</div>
+                      <div class="card-item">Breakfast Cereals</div>
+                      <div class="card-item">Canned Goods</div>
+                  </div>
+                  <a href="packaged-foods.html" class="see-more">See more</a>
+              </div>
+          </div>
+          
+          <!-- Zepto Clothes Section -->
+          <div class="section-title" style="margin-top: 30px;">Fashion for Everyone | Up to 70% off</div>
+          <div class="cards-container">
+              <div class="product-card" onclick="window.location.href='clothing.html'">
+                  <div class="card-header">
+                      <span class="deal-badge">Trending</span>
+                      <div class="card-title">Men's & Women's Clothing</div>
+                      <div class="card-subtitle">Latest styles & brands</div>
+                  </div>
+                  <img src="https://m.media-amazon.com/images/I/61-jBuhtgZL._SX3000_.jpg" alt="Clothing" class="card-image">
+                  <div class="card-items">
+                      <div class="card-item">T-Shirts</div>
+                      <div class="card-item">Jeans</div>
+                      <div class="card-item">Dresses</div>
+                      <div class="card-item">Activewear</div>
+                  </div>
+                  <a href="clothing.html" class="see-more">See more</a>
+              </div>
+              
+              <!-- Zepto Accessories Section -->
+              <div class="product-card" onclick="window.location.href='accessories.html'">
+                  <div class="card-header">
+                      <span class="deal-badge">Hot Deal</span>
+                      <div class="card-title">Fashion Accessories</div>
+                      <div class="card-subtitle">Complete your look</div>
+                  </div>
+                  <img src="https://th.bing.com/th/id/OIP.vjC_pct4W4dubWkrnyDSgQHaFL?rs=1&pid=ImgDetMain" alt="Accessories" class="card-image">
+                  <div class="card-items">
+                      <div class="card-item">Watches</div>
+                      <div class="card-item">Bags</div>
+                      <div class="card-item">Sunglasses</div>
+                      <div class="card-item">Jewelry</div>
+                  </div>
+                  <a href="accessories.html" class="see-more">See more</a>
+              </div>
+              <div class="product-card" onclick="window.location.href='accessories.html'">
+                <div class="card-header">
+                    <span class="deal-badge">Hot Deal</span>
+                    <div class="card-title">Appliances for your home </div>
+                    <div class="card-subtitle">Complete your look</div>
+                </div>
+                <img src="https://th.bing.com/th/id/OIP.ZxUtQxJtjRVhuVuWTFcg9QHaFP?rs=1&pid=ImgDetMain" alt="Accessories" class="card-image">
+                <div class="card-items">
+                    <div class="card-item">Refrigerators</div>
+                    <div class="card-item">TV</div>
+                    <div class="card-item">COOLERS</div>
+                    <div class="card-item">Washing Machine</div>
+                </div>
+                <a href="accessories.html" class="see-more">See more</a>
+            </div>
+              
+              <!-- Zepto Electronics Section -->
+              <div class="product-card" onclick="window.location.href='hie.html'">
+                  <div class="card-header">
+                      <span class="deal-badge">Limited Time</span>
+                      <div class="card-title">Electronics & Gadgets</div>
+                      <div class="card-subtitle">Smart devices for you</div>
+                  </div>
+                  <img src="https://www.pngall.com/wp-content/uploads/9/Gadget-PNG-Pic.png" alt="Electronics" class="card-image">
+                  <div class="card-items">
+                      <div class="card-item">Smartphones</div>
+                      <div class="card-item">Headphones</div>
+                      <div class="card-item">Laptops</div>
+                      <div class="card-item">Smart Watches</div>
+                  </div>
+                  <a href="hie.html" class="see-more">See more</a>
+              </div>
+          </div>
+          
+          <!-- Zepto Home Appliances Section -->
+          <div class="section-title" style="margin-top: 30px;">Home Appliances | Up to 55% off</div>
+          <div class="cards-container">
+              <div class="product-card" onclick="window.location.href='appliances.html'">
+                  <div class="card-header">
+                      <span class="deal-badge">Best Value</span>
+                      <div class="card-title">Kitchen & Home Appliances</div>
+                      <div class="card-subtitle">Make life easier</div>
+                  </div>
+                  <img src="https://m.media-amazon.com/images/I/61CiqVTRBEL._SX3000_.jpg" alt="Appliances" class="card-image">
+                  <div class="card-items">
+                      <div class="card-item">Air Conditioners</div>
+                      <div class="card-item">Refrigerators</div>
+                      <div class="card-item">Microwaves</div>
+                      <div class="card-item">Washing Machines</div>
+                  </div>
+                  <a href="appliances.html" class="see-more">See more</a>
+              </div>
+              
+              <!-- Zepto Home Essentials Section -->
+              <div class="product-card" onclick="window.location.href='home-essentials.html'">
+                  <div class="card-header">
+                      <span class="deal-badge">Popular</span>
+                      <div class="card-title">FOOD</div>
+                      <div class="card-subtitle"></div>
+                  </div>
+                  <img src="https://th.bing.com/th/id/OIP.GonVWStweyOOTz39FooMBgHaFa?w=1900&h=1389&rs=1&pid=ImgDetMain" alt="Home Essentials" class="card-image">
+                  <div class="card-items">
+                      <div class="card-item">Bedding</div>
+                      <div class="card-item">Storage Solutions</div>
+                      <div class="card-item">Lighting</div>
+                      <div class="card-item">Cleaning Supplies</div>
+                  </div>
+                  <a href="home-essentials.html" class="see-more">See more</a>
+              </div>
+              <div class="product-card" onclick="window.location.href='home-essentials.html'">
+                <div class="card-header">
+                    <span class="deal-badge">Popular</span>
+                    <div class="card-title">Home Essentials</div>
+                    <div class="card-subtitle">Everything for your home</div>
+                </div>
+                <img src="https://m.media-amazon.com/images/I/71qid7QFWJL._SX3000_.jpg" alt="Home Essentials" class="card-image">
+                <div class="card-items">
+                    <div class="card-item">Bedding</div>
+                    <div class="card-item">Storage Solutions</div>
+                    <div class="card-item">Lighting</div>
+                    <div class="card-item">Cleaning Supplies</div>
+                </div>
+                <a href="home-essentials.html" class="see-more">See more</a>
+            </div>
+              
+              <!-- Zepto Personal Care Section -->
+              <div class="product-card" onclick="window.location.href='personal-care.html'">
+                  <div class="card-header">
+                      <span class="deal-badge">Daily Essentials</span>
+                      <div class="card-title">Personal Care</div>
+                      <div class="card-subtitle">Health & beauty</div>
+                  </div>
+                  <img src="https://marketingweek.imgix.net/content/uploads/2020/01/23180313/shutterstock_1253285347-2-scaled.jpg?auto=compress,format&q=60&w=736&h=459" alt="Personal Care" class="card-image">
+                  <div class="card-items">
+                      <div class="card-item">Skincare</div>
+                      <div class="card-item">Haircare</div>
+                      <div class="card-item">Oral Care</div>
+                      <div class="card-item">Bath & Body</div>
+                  </div>
+                  <a href="personal-care.html" class="see-more">See more</a>
+              </div>
+          </div>
+      </div>
+  
+      <script>
+          // You can add JavaScript functionality here
+          document.querySelectorAll('.product-card').forEach(card => {
+              card.addEventListener('click', function() {
+                  // You can add additional click handling here
+                  console.log('Navigating to: ' + this.querySelector('a').href);
+              });
+          });
+      </script>
+    </header>
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js
+    "></script>
+</body>
+</html>

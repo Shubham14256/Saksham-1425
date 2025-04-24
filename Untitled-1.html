@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sakura Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@400;600&family=Satisfy&display=swap" rel="stylesheet">
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Open Sans', sans-serif;
+      background: linear-gradient(to top, #ffe6f0, #ffffff);
+      color: #5c3a3a;
+      -webkit-tap-highlight-color: transparent;
+      overflow-x: hidden;
+    }
+
+    header {
+      text-align: center;
+      padding: 60px 20px 60px;
+      background-color: rgba(255, 220, 230, 0.5);
+    }
+
+    header h1 {
+      font-size: 3rem;
+      margin: 0;
+      font-family: 'Satisfy', cursive;
+    }
+
+    header p {
+      font-size: 1rem;
+      color: #7a4e4e;
+    }
+    
+    .user-image-container {
+      position: relative;
+      margin-bottom: 80px;
+      width: 100%;
+      height: 0;
+      z-index: 100;
+    }
+
+    .user-image {
+      position: absolute;
+      top: -70px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 150px;
+      height: 150px;
+      text-align: center;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 4px solid rgb(255, 220, 230, 0.7);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      background: #fff;
+      z-index: 10;
+    }
+    
+    .user-image-container p {
+      position: absolute;
+      background: rgba(255, 220, 230, 0.85);
+      font-family: 'Satisfy', cursive;
+      font-size: 1.1rem;
+      top: 60px;
+      left: 50%;
+      padding: 4px 20px;
+      border-radius: 4px;
+      z-index: 11;
+      transform: translateX(-50%);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      clip-path: polygon(10% 0%, 90% 0%, 100% 50%, 90% 100%, 10% 100%, 0% 50%);
+    }
+
+    section {
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: auto;
+      opacity: 0;
+      transform: translateY(50px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    h2 {
+      font-family: 'Poppins', sans-serif;
+      border-left: 4px solid #ffb6c1;
+      padding-left: 10px;
+      margin-bottom: 20px;
+      font-size: 1.8rem;
+    }
+    
+    .skills-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      padding: 20px 0;
+    }
+
+    .skill-item {
+      text-align: center;
+      width: 5rem;
+    }
+
+    .skill-item i {
+      font-size: 30px;
+      color: #ffb6c1;
+      background-color: white;
+      height: 50px;
+      width: 50px;
+      border-radius: 50%;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.3s;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .skill-item span {
+      display: block;
+      font-size: 14px;
+      color: #333;
+    }
+
+    .skill-item:hover i {
+      transform: scale(1.1);
+    }
+
+    .project {
+      background: rgba(255, 240, 245, 0.7);
+      padding: 20px;
+      border-radius: 12px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 10px rgba(255, 182, 193, 0.2);
+    }
+
+    .project button {
+      margin-top: 10px;
+      padding: 8px 16px;
+      background: #ffb6c1;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .project button:hover {
+      background: #ff8ea1;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      background-color: rgba(255, 220, 230, 0.5);
+    }
+
+    .fullscreen-project {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: 1000;
+      padding: 10px;
+      display: none;
+      transform-origin: center center;
+      transition: transform 0.6s ease, opacity 0.6s ease;
+      transform: scale(0.2);
+      opacity: 0;
+      overflow: auto;
+      flex-direction: column;
+    }
+
+    .fullscreen-project.show {
+      display: flex;
+    }
+
+    .fullscreen-project.zoom-in {
+      animation: zoomInFrom 0.5s ease forwards;
+    }
+
+    .fullscreen-project.zoom-out {
+      animation: zoomOutTo 0.5s ease forwards;
+    }
+
+    .close-preview {
+      align-self: flex-end;
+      font-size: 28px;
+      padding: 20px 20px;
+      cursor: pointer;
+      color: #c0392b;
+    }
+
+    @keyframes zoomInFrom {
+      from { border-radius: 8%; background: #ffb6c1; transform: scale(0.2); opacity: 0; }
+      to   { border-radius: 0px; background: #fff0f5; transform: scale(1);   opacity: 1; }
+    }
+
+    @keyframes zoomOutTo {
+      from { border-radius: 0px; background: #fff0f5; transform: scale(1);   opacity: 1; }
+      to   { border-radius: 8%; background: #ffb6c1; transform: scale(0.2); opacity: 0; }
+    }
+    
+    .image-gallery {
+      height: 70vh;
+      overflow-y: auto;
+      padding: 20px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .image-gallery img {
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      border-radius: 12px;
+      object-fit: contain;
+      transition: 0.6s ease;
+    }
+    
+    .image-gallery img:hover {
+        transform:scale(1.03);
+        transition: 0.6s ease;
+    }
+    
+    #todoInput {
+      width: 100%;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #ddc4d0;
+      box-sizing: border-box;
+    }
+
+    #todoInput::placeholder {
+      color: #ddc4d0;
+    }
+
+    .petal {
+      position: fixed;
+      top: -10px;
+      width: 20px;
+      height: 20px;
+      pointer-events: none;
+      z-index: 998;
+      animation: fall linear infinite;
+    }
+
+    @keyframes fall {
+      0%   { transform: translateY(0) rotate(0deg);   opacity: 1; }
+      100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Sakura Aesthetic</h1>
+    <p>Full-Stack Developer | AI Enthusiast | Dreamer</p>
+  </header>
+  
+  <div class="user-image-container">
+    <img src="https://i.postimg.cc/cJ26SVxB/mori.jpg" alt="" class="user-image" />
+    <p>Snehil Pandey</p>
+  </div>
+
+  <section>
+    <h2>About Me</h2>
+    <p>Hello! I'm a full-stack developer who finds beauty in simplicity and elegance. I love creating interfaces that feel natural, soft, and engaging—just like a spring breeze under blooming sakura trees.</p>
+  </section>
+  
+  <section>
+    <h2>Skills</h2>
+    <div class="skills-grid">
+      <div class="skill-item">
+        <i class="fab fa-html5"></i>
+        <span>HTML</span>
+      </div>
+      <div class="skill-item">
+        <i class="fab fa-css3-alt"></i>
+        <span>CSS</span>
+      </div>
+      <div class="skill-item">
+        <i class="fab fa-js"></i>
+        <span>JavaScript</span>
+      </div>
+      <div class="skill-item">
+        <i class="fab fa-react"></i>
+        <span>React</span>
+      </div>
+      <div class="skill-item">
+        <i class="fab fa-node-js"></i>
+        <span>Node.js</span>
+      </div>
+      <div class="skill-item">
+        <i class="fas fa-database"></i>
+        <span>MySQL</span>
+      </div>
+      <div class="skill-item">
+        <i class="fab fa-python"></i>
+        <span>Python</span>
+      </div>
+      <div class="skill-item">
+        <i class="fab fa-java"></i>
+        <span>Java</span>
+      </div>
+      <div class="skill-item">
+        <i class="fas fa-code"></i>
+        <span>C</span>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Projects</h2>
+
+    <div class="project">
+      <h3>PetalGallery</h3>
+      <p>An image gallery with gentle hover animations. Built using JavaScript and CSS3.</p>
+      <button onclick="openPreview('petalProject', this)">Preview</button>
+    </div>
+
+    <div class="project">
+      <h3>ZenToDo</h3>
+      <p>A to-do list web app designed for calm productivity.</p>
+      <button onclick="openPreview('zenProject', this)">Preview</button>
+    </div>
+  </section>
+
+  <section>
+    <h2>Contact</h2>
+    <p>
+      <i class="fas fa-envelope" style="color:pink;"></i>
+      : notmymail@domain.com
+    </p>
+    <p>
+      <i class="fab fa-github" style="color:pink;"></i>
+      : github.com/snehil-pandey
+    </p>
+    <p>
+        <i class="fab fa-telegram-plane" style="color:pink;"></i>
+      : @snehilpandey
+    </p>
+    </p>
+  </section>
+
+  <footer>
+    Made with 🩷 under the Sakura sky.
+  </footer>
+
+  <!-- PREVIEW PROJECTS -->
+  <div class="fullscreen-project" id="petalProject">
+    <div class="close-preview" onclick="closePreview('petalProject')">&times;</div>
+    <h2>PetalGallery</h2>
+    <div class="image-gallery" style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; padding: 20px;">
+      <img src="https://i.postimg.cc/zDnvst9T/file-000000003f0461f88188f15a3eb51a8a-conversation-id-67fab58e-4068-800a-9c8c-95efc0e836cb-message-i.png" alt="gallery1" style="border-radius: 12px;">
+      <img src="https://i.postimg.cc/d3m0G385/file-00000000101c61f8845c53624f886a60-conversation-id-67fab58e-4068-800a-9c8c-95efc0e836cb-message-i.jpg" alt="gallery2" style="border-radius: 12px;">
+      <img src="https://i.postimg.cc/5yM0HLFH/file-00000000cdcc6246973ebaf74a6690a2-conversation-id-67fab58e-4068-800a-9c8c-95efc0e836cb-message-i.png" alt="gallery3" style="border-radius: 12px;">
+      <img src="https://i.postimg.cc/TYD0v6TC/file-000000002e446246ae4929ed17e7042c-conversation-id-67fab58e-4068-800a-9c8c-95efc0e836cb-message-i.png" alt="gallery4" style="border-radius: 12px; background: #fee;">
+    </div>
+  </div>
+
+  <div class="fullscreen-project" id="zenProject">
+    <div class="close-preview" onclick="closePreview('zenProject')">&times;</div>
+    <h2>ZenToDo</h2>
+    <div style="padding: 20px; max-width: 300px; margin: 8px 0;">
+      <input type="text" id="todoInput" placeholder="Add a task...">
+      <ul id="todoList" style="list-style: none; padding: 0; margin-top: 15px;"></ul>
+    </div>
+  </div>
+
+  <script>
+    // Sakura Petals
+    const sakuraSVG = <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#f9c5d1"><path d="M12 2c1 3 3 4 6 3-1 3-1 5 2 6-3 1-4 3-3 6-3-1-5-1-6 2-1-3-3-4-6-3 1-3 1-5-2-6 3-1 4-3 3-6 3 1 5 1 6-2z"/></svg>;
+    function createPetal() {
+      const petal = document.createElement('div');
+      petal.classList.add('petal');
+      petal.style.left = Math.random() * 100 + 'vw';
+      petal.style.animationDuration = 5 + Math.random() * 5 + 's';
+      petal.style.opacity = 0.5 + Math.random() * 0.5;
+      petal.style.transform = rotate(${Math.random() * 360}deg);
+      petal.innerHTML = sakuraSVG;
+      document.body.appendChild(petal);
+      setTimeout(() => petal.remove(), 10000);
+    }
+    setInterval(createPetal, 300);
+
+    function openPreview(id, btn) {
+      const el = document.getElementById(id);
+      const rect = btn.getBoundingClientRect();
+      const originX = (rect.left + rect.width / 2) / window.innerWidth * 100;
+      const originY = (rect.top + rect.height / 2) / window.innerHeight * 100;
+      el.dataset.origin = ${originX}% ${originY}%;
+      el.style.transformOrigin = el.dataset.origin;
+      el.classList.remove('zoom-out');
+      el.classList.add('show');
+      requestAnimationFrame(() => el.classList.add('zoom-in'));
+    }
+
+    function closePreview(id) {
+      const el = document.getElementById(id);
+      el.classList.remove('zoom-in');
+      el.classList.add('zoom-out');
+      if (el.dataset.origin) el.style.transformOrigin = el.dataset.origin;
+      setTimeout(() => {
+        el.classList.remove('zoom-out');
+        el.classList.remove('show');
+      }, 500);
+    }
+
+    const input = document.getElementById('todoInput');
+const list = document.getElementById('todoList');
+
+if (input && list) {
+  input.addEventListener('keydown', e => {
+    if (e.key === 'Enter' && input.value.trim()) {
+      const li = document.createElement('li');
+      li.style.display = 'flex';
+      li.style.justifyContent = 'space-between';
+      li.style.alignItems = 'center';
+      li.style.padding = '10px 15px';
+      li.style.margin = '8px 0';
+      li.style.background = 'rgba(255, 250, 255, 0.7)';
+      li.style.borderRadius = '12px';
+      li.style.boxShadow = '0 4px 10px rgba(255, 182, 193, 0.2)';
+
+      const text = document.createElement('span');
+      text.textContent = input.value;
+      text.style.flex = '1';
+
+      const removeBtn = document.createElement('button');
+      removeBtn.innerHTML = '&times;';
+      removeBtn.style.marginLeft = '10px';
+      removeBtn.style.background = 'transparent';
+      removeBtn.style.border = 'none';
+      removeBtn.style.color = '#e75480';
+      removeBtn.style.fontSize = '18px';
+      removeBtn.style.cursor = 'pointer';
+
+      removeBtn.onclick = () => li.remove();
+
+      li.appendChild(text);
+      li.appendChild(removeBtn);
+      list.appendChild(li);
+      input.value = '';
+    }
+  });
+}
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('section').forEach(sec => observer.observe(sec));
+  </script>
+</body>
+</html>

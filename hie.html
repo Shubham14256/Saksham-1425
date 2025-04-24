@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saksham</title>
+    <style>
+        /* Add any additional styles needed */
+    </style>
+</head>
+<body style="font-family: Arial, sans-serif; margin: 0; padding: 0;">
+
+    <!-- Header -->
+    <header style="background-color: #f5f5f5; padding: 10px; text-align: center;">
+        <h1 style="margin: 0;">Saksham</h1>
+        <input type="text" placeholder="Search for products..." style="padding: 10px; width: 300px; border: 1px solid #ccc; border-radius: 5px;">
+        <div style="display: inline-block; margin-left: 20px;">
+          <a href="add cart.html"><span id="cart-count" style="font-weight: bold;">Cart (0)</span></a>
+        </div>
+    </header>
+
+    <!-- Banner -->
+    <div style="background-color: #007bff; color: white; padding: 50px; text-align: center;">
+        <h2>Summer Sale</h2>
+        <p>Up to 40% off on selected items</p>
+        <button style="background-color: white; color: #007bff; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">Shop Now</button>
+    </div>
+
+    <!-- Categories -->
+    <div style="text-align: center; margin: 20px 0;">
+        <h3>Shop by Category</h3>
+        <!-- Category items here -->
+    </div>
+
+    <div style="text-align: center; padding: 20px;">
+        <h1 style="color: #333;">Featured Products</h1>
+        <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 20px;">
+
+            <!-- Product item -->
+            <div class="product" style="border: 1px solid #ddd; border-radius: 8px; padding: 10px; background-color: #fff; width: 250px;">
+                <img src="https://th.bing.com/th?id=OPAC.ZcYcKyb%2bbIEXXg474C474&w=592&h=550&o=5&dpr=1.3&pid=21.1" alt="Canon Eos 3000D Dslr Camera" style="width: 100%; border-radius: 8px;">
+                <p style="font-weight: bold; margin: 10px 0;">Canon Eos 3000D Dslr Camera 1 Body, 18 - 55 mm Lens</p>
+                <span style="color: red;">10% OFF</span>
+                <p style="font-size: 18px; color: #333;">₹ 29,999</p>
+                <button onclick="addToCart('Canon Eos 3000D Dslr Camera',29999)" style="background-color: #007bff; color: white; border: none; border-radius: 5px; padding: 10px; cursor: pointer;">Add to Cart</button>
+            </div>
+            <div class="product" style="border: 1px solid #ddd; border-radius: 8px; padding: 10px; background-color: #fff; width: 250px;">
+              <img src="https://th.bing.com/th?id=OPAC.f%2f%2fyxv5WANVqcw474C474&w=180&h=150&c=17&dpr=1.3&pid=21.1" alt="Lenovo V15 Gen 5, Custom Business Laptop" style="width: 100%; border-radius: 8px;">
+              <p style="font-weight: bold; margin: 10px 0;">Lenovo V15 Gen 5, Custom Business Laptop (15&quot;, 8GB RAM/256GB SSD, Intel Core 5)</p>
+              <span style="color: red;">10% OFF</span>
+              <p style="font-size: 18px; color: #333;">₹ 42,625.00</p>
+              <button onclick="addToCart('Lenovo V15 Gen 5',42625.00)" style="background-color: #007bff; color: white; border: none; border-radius: 5px; padding: 10px; cursor: pointer;">Add to Cart</button>
+          </div>
+          <div class="product" style="border: 1px solid #ddd; border-radius: 8px; padding: 10px; background-color: #fff; width: 250px;">
+            <img src="https://th.bing.com/th/id/OPAC.r7hrNl0g2Ofx1A474C474?w=592&h=550&o=5&dpr=1.3&pid=21.1" alt="Oneplus Nord Buds 2" style="width: 100%; border-radius: 8px;">
+            <p style="font-weight: bold; margin: 10px 0;">Oneplus Nord Buds 2</p>
+            <span style="color: red;">10% OFF</span>
+            <p style="font-size: 18px; color: #333;">₹ 2,099</p>
+            <button onclick="addToCart('Oneplus Nord Buds 2',2099)" style="background-color: #007bff; color: white; border: none; border-radius: 5px; padding: 10px; cursor: pointer;">Add to Cart</button>
+        </div>
+        <div class="product" style="border: 1px solid #ddd; border-radius: 8px; padding: 10px; background-color: #fff; width: 250px;">
+          <img src="https://th.bing.com/th/id/OPAC.fCdPECbp7Hm4Kg474C474?w=592&h=550&o=5&dpr=1.3&pid=21.1" alt="Samsung Galaxy Book 4" style="width: 100%; border-radius: 8px;">
+          <p style="font-weight: bold; margin: 10px 0;">Samsung Galaxy Book 4 Metal Intel Core i3 13th Gen 1315U - 8 Gb/512 Gb Ssd</p>
+          <span style="color: red;">10% OFF</span>
+          <p style="font-size: 18px; color: #333;">₹ 39,990</p>
+          <button onclick="addToCart('Samsung Galaxy Book 4 ', 39990)" style="background-color: #007bff; color: white; border: none; border-radius: 5px; padding: 10px; cursor: pointer;">Add to Cart</button>
+      </div>
+      <div class="product" style="border: 1px solid #ddd; border-radius: 8px; padding: 10px; background-color: #fff; width: 250px;">
+        <img src="https://th.bing.com/th/id/OPAC.kMJMfPVsTvgh3A474C474?w=592&h=550&o=5&dpr=1.3&pid=21.1" alt="HP 60.5 cm (23.8) All-In-One Desktop PC 24-cb1901in" style="width: 100%; border-radius: 8px;">
+        <p style="font-weight: bold; margin: 10px 0;">HP 60.5 cm (23.8) All-In-One Desktop PC 24-cb1901in</p>
+        <span style="color: red;">10% OFF</span>
+        <p style="font-size: 18px; color: #333;">₹ 52,499</p>
+        <button onclick="addToCart('HP 60.5 cm All-In-One Desktop PC 24-cb1901in ', 52499)" style="background-color: #007bff; color: white; border: none; border-radius: 5px; padding: 10px; cursor: pointer;">Add to Cart</button>
+    </div>
+    <div class="product" style="border: 1px solid #ddd; border-radius: 8px; padding: 10px; background-color: #fff; width: 250px;">
+          <img src="https://th.bing.com/th?id=OPAC.Qzu%2fMwFMHt%2fqvQ474C474&w=592&h=550&o=5&dpr=1.3&pid=21.1" alt="Pebble Spark 1.7 Inch BT Calling With SPO2" style="width: 100%; border-radius: 8px;">
+          <p style="font-weight: bold; margin: 10px 0;">Pebble Spark 1.7 Inch BT Calling With SPO2, HR Monitor Smartwatch</p>
+          <span style="color: red;">10% OFF</span>
+          <p style="font-size: 18px; color: #333;">₹ 2,199</p>
+          <button onclick="addToCart('Pebble Spark 1.7 Inch BT Calling With SPO2', 2199)" style="background-color: #007bff; color: white; border: none; border-radius: 5px; padding: 10px; cursor: pointer;">Add to Cart</button>
+      </div>
+      <div class="product" style="border: 1px solid #ddd; border-radius: 8px; padding: 10px; background-color: #fff; width: 250px;">
+        <img src="https://www.jiomart.com/images/product/original/493839309/apple-iphone-15-128gb-black-digital-o493839309-p604568761-0-202309141655.jpeg?im=Resize=(420,420)" alt="Apple iPhone 15 128GB Black" style="width: 100%; border-radius: 8px;">
+        <p style="font-weight: bold; margin: 10px 0;">Apple iPhone 15 128GB Black</p>
+        <span style="color: red;">10% OFF</span>
+        <p style="font-size: 18px; color: #333;">₹ 62,290</p>
+        <button onclick="addToCart('Apple iPhone 15 128GB Black', 62290)" style="background-color: #007bff; color: white; border: none; border-radius: 5px; padding: 10px; cursor: pointer;">Add to Cart</button>
+      </div>
+      <div class="product" style="border: 1px solid #ddd; border-radius: 8px; padding: 10px; background-color: #fff; width: 250px;">
+        <img src="https://d13rpl5inwerx1.cloudfront.net/filters:format(webp)/filters:quality(90)/fit-in/370x370/images/images/301437_jywvym.webp" alt="boAt Party Pal 195 50W Portable Bluetooth Speaker" style="width: 100%; border-radius: 8px;">
+        <p style="font-weight: bold; margin: 10px 0;">boAt Party Pal 195 50W Portable Bluetooth Speaker (RGB Light, 1.0 Channel, Midnight Black)</p>
+        <span style="color: red;">11% OFF</span>
+        <p style="font-size: 18px; color: #333;">₹ 7,999</p>
+        <button onclick="addToCart('boAt Party Pal 195 50W Portable Bluetooth Speaker ', 7999)" style="background-color: #007bff; color: white; border: none; border-radius: 5px; padding: 10px; cursor: pointer;">Add to Cart</button>
+      </div>
+      <div class="product" style="border: 1px solid #ddd; border-radius: 8px; padding: 10px; background-color: #fff; width: 250px;">
+        <img src="https://d13rpl5inwerx1.cloudfront.net/filters:format(webp)/fit-in/255x255/images/images/1_LmFqiGl.webp" alt="SAMSUNG MOBILE S24 ULTRA 12GB 256GB TITANIUM GRAY" style="width: 100%; border-radius: 8px;">
+        <p style="font-weight: bold; margin: 10px 0;">SAMSUNG MOBILE S24 ULTRA 12GB 256GB TITANIUM GRAY</p>
+        <span style="color: red;">10% OFF</span>
+        <p style="font-size: 18px; color: #333;">₹ 1,26,100</p>
+        <button onclick="addToCart('SAMSUNG MOBILE S24 ULTRA 12GB 256GB TITANIUM GRAY', 126100)" style="background-color: #007bff; color: white; border: none; border-radius: 5px; padding: 10px; cursor: pointer;">Add to Cart</button>
+      </div>
+      <div class="product" style="border: 1px solid #ddd; border-radius: 8px; padding: 10px; background-color: #fff; width: 250px;">
+        <img src="https://d13rpl5inwerx1.cloudfront.net/filters:format(webp)/fit-in/255x255/images/images/1_QW7RnnK.webp"alt="OnePlus 11R 5G" style="width: 100%; border-radius: 8px;">
+        <p style="font-weight: bold; margin: 10px 0;">OnePlus 11R 5G (16 GB RAM, 256 GB ROM, Silver)</p>
+        <span style="color: red;">10% OFF</span>
+        <p style="font-size: 18px; color: #333;">₹ 44,999</p>
+        <button onclick="addToCart('OnePlus 11R 5G', 44999)" style="background-color: #007bff; color: white; border: none; border-radius: 5px; padding: 10px; cursor: pointer;">Add to Cart</button>
+      </div>
+      <div class="product" style="border: 1px solid #ddd; border-radius: 8px; padding: 10px; background-color: #fff; width: 250px;">
+        <img src="https://d13rpl5inwerx1.cloudfront.net/filters:format(webp)/filters:quality(90)/fit-in/370x370/images/images/Product-details-main-504620-min.webp" alt="Samsung Galaxy Z Fold 6 5G" style="width: 100%; border-radius: 8px;">
+        <p style="font-weight: bold; margin: 10px 0;">Samsung Galaxy Z Fold 6 5G SM-F956B Dual Sim 256GB Silver (12GB RAM)</p>
+        <span style="color: red;">10% OFF</span>
+        <p style="font-size: 18px; color: #333;">₹ 1,62,999</p>
+        <button onclick="addToCart('Samsung Galaxy Z Fold 6 5G', 162999)" style="background-color: #007bff; color: white; border: none; border-radius: 5px; padding: 10px; cursor: pointer;">Add to Cart</button>
+      </div>
+      <div class="product" style="border: 1px solid #ddd; border-radius: 8px; padding: 10px; background-color: #fff; width: 250px;">
+        <img src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcTPSbCaEP624xK9sal09ZEj_gIdsSLmdNwGCtJ4ymEaCUU9ExkUHHUwx4f5xKmN2vPAJUHBW_7t68-2Q_M9rCqX-Ph3etZ8dd6oBBw75wg9RwRcvscOEdFC" alt="boAt Airdopes 163 Wireless Earbuds" style="width: 100%; border-radius: 8px;">
+        <p style="font-weight: bold; margin: 10px 0;">boAt Airdopes 163 Wireless Earbuds</p>
+        <span style="color: red;">10% OFF</span>
+        <p style="font-size: 18px; color: #333;">₹ 1,099</p>
+        <button onclick="addToCart('boAt Airdopes 163 Wireless Earbuds', 1099)" style="background-color: #007bff; color: white; border: none; border-radius: 5px; padding: 10px; cursor: pointer;">Add to Cart</button>
+      </div>
+      <div class="product" style="border: 1px solid #ddd; border-radius: 8px; padding: 10px; background-color: #fff; width: 250px;">
+        <img src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcR7EEeyGLgSal-pBqXCwi8PSKTazDK0HUOxt2N_tWFiaCnVZ6YIJO0k-7Bh_PsKrJPN0bPqummnDazU0fW6RC-Hs3PyiCiUtBL1RXV70Z1cYUWFiVFEjdbpuyw" alt="Boult Mustang Torq Wireless Earbuds" style="width: 100%; border-radius: 8px;">
+        <p style="font-weight: bold; margin: 10px 0;">Boult Mustang Torq Wireless Earbuds</p>
+        <span style="color: red;">10% OFF</span>
+        <p style="font-size: 18px; color: #333;">₹ 1,499</p>
+        <button onclick="addToCart('Boult Mustang Torq Wireless Earbuds', 1499)" style="background-color: #007bff; color: white; border: none; border-radius: 5px; padding: 10px; cursor: pointer;">Add to Cart</button>
+      </div>
+      <div class="product" style="border: 1px solid #ddd; border-radius: 8px; padding: 10px; background-color: #fff; width: 250px;">
+        <img src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcSIG8fx0IWv39efAngm5sDaFvgD-B8Iaf-wZz7iVRmrV-6TybpkEvs7HEBXv-iVcn9Yd8fhjgapoZGYZu-mdBMpwVbFzoL8gg2Hqs2cEKhcpfjsmNmxJTeJCw" alt="Noise Master Buds Sound by Bose TWS Earbuds" style="width: 100%; border-radius: 8px;">
+        <p style="font-weight: bold; margin: 10px 0;">Noise Master Buds Sound by Bose TWS Earbuds</p>
+        <span style="color: red;">10% OFF</span>
+        <p style="font-size: 18px; color: #333;">₹ 7,999</p>
+        <button onclick="addToCart('Noise Master Buds Sound by Bose TWS Earbuds',7999)" style="background-color: #007bff; color: white; border: none; border-radius: 5px; padding: 10px; cursor: pointer;">Add to Cart</button>
+    </div>
+    <div class="product" style="border: 1px solid #ddd; border-radius: 8px; padding: 10px; background-color: #fff; width: 250px;">
+      <img src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQrnHMLXXMQPaaG-t0_BGJYhzMQuyPOfuynfCyh1qkJ2vZ1PZl0pJZL_E_7jgvJ9ooJOWH3lACvtOnDQVsNJH0iMZh8B6yeyg-glw-OOUBU-3_jsBufS7ijAw" alt="Amazon Fire TV Stick Lite" style="width: 100%; border-radius: 8px;">
+      <p style="font-weight: bold; margin: 10px 0;">Amazon Fire TV Stick Lite</p>
+      <span style="color: red;">10% OFF</span>
+      <p style="font-size: 18px; color: #333;">₹ 3,499</p>
+      <button onclick="addToCart('Amazon Fire TV Stick Lite',3499)" style="background-color: #007bff; color: white; border: none; border-radius: 5px; padding: 10px; cursor: pointer;">Add to Cart</button>
+   </div>
+   <div class="product" style="border: 1px solid #ddd; border-radius: 8px; padding: 10px; background-color: #fff; width: 250px;">
+    <img src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcT-5X2PGxu9iVKbz_DUUO4VcZC2LzBWZC_OZLdlhZ9Ov4STbxwgYQWOyf19G8iL3bWMFo1Ap5S9BXARJtidzPp3qovC3zx2bbEyTr7Ijv0MupIa64G5OT28" alt="Acer Nitro V ANV15-41 AMD Ryzen 7 Gaming Laptop" style="width: 100%; border-radius: 8px;">
+    <p style="font-weight: bold; margin: 10px 0;">Acer Nitro V ANV15-41 AMD Ryzen 7 Gaming Laptop</p>
+    <span style="color: red;">10% OFF</span>
+    <p style="font-size: 18px; color: #333;">₹ 73,999</p>
+    <button onclick="addToCart('Acer Nitro V ANV15-41 AMD Ryzen 7 Gaming Laptop',73,999)" style="background-color: #007bff; color: white; border: none; border-radius: 5px; padding: 10px; cursor: pointer;">Add to Cart</button>
+    </div>
+    <div class="product" style="border: 1px solid #ddd; border-radius: 8px; padding: 10px; background-color: #fff; width: 250px;">
+      <img src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTbrOPU9zagquZtvVi0SeWRHAin1bG7MjWQ6GmKbyXBk1JrxbrXjOsn1sQlE04t4WGEjTq_tSMT_tUWd4ko5tY3ivOpRR1YNWd4oydjQbAO-ZGDSeacMPEa" alt="LG 80 cm HD Ready Smart LED TV" style="width: 100%; border-radius: 8px;">
+      <p style="font-weight: bold; margin: 10px 0;">LG 80 cm HD Ready Smart LED TV</p>
+      <span style="color: red;">10% OFF</span>
+      <p style="font-size: 18px; color: #333;">₹ 15,999</p>
+      <button onclick="addToCart('LG 80 cm HD Ready Smart LED TV',15999)" style="background-color: #007bff; color: white; border: none; border-radius: 5px; padding: 10px; cursor: pointer;">Add to Cart</button>
+    </div>
+    <div class="product" style="border: 1px solid #ddd; border-radius: 8px; padding: 10px; background-color: #fff; width: 250px;">
+      <img src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQ_u74rbrqo5mGMAWkurbHfpTsx20iDaVmBwAPid_S50PV27Zsm8vsjkBAzhf0SwY0t5xhl1L-GIgACET8QctSU8gsO0jGm4g9nQgfKL82wBtvV6WHpBGEi76Q" alt="Marshall Acton III Bluetooth Speaker" style="width: 100%; border-radius: 8px;">
+      <p style="font-weight: bold; margin: 10px 0;">Marshall Acton III Bluetooth Speaker</p>
+      <span style="color: red;">10% OFF</span>
+      <p style="font-size: 18px; color: #333;">₹ 27,999</p>
+      <button onclick="addToCart('Marshall Acton III Bluetooth Speaker',27999)" style="background-color: #007bff; color: white; border: none; border-radius: 5px; padding: 10px; cursor: pointer;">Add to Cart</button>
+    </div>
+    <div class="product" style="border: 1px solid #ddd; border-radius: 8px; padding: 10px; background-color: #fff; width: 250px;">
+      <img src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcSzaFSFUtPYssJmomXNR-3sEj4KzX0meZi6AFJpy2EwKRTmWYma97pA1t_2NyovEMGDzgIj3BHN1ivutlI6n03e1fyyKBkjeL1JPr7YDARebuPsVI6hrlShFIY" alt="Acer Nitro V Gaming Laptop 13th Gen Intel Core Rtx" style="width: 100%; border-radius: 8px;">
+      <p style="font-weight: bold; margin: 10px 0;">Acer Nitro V Gaming Laptop 13th Gen Intel Core Rtx</p>
+      <span style="color: red;">10% OFF</span>
+      <p style="font-size: 18px; color: #333;">₹ 73,999</p>
+      <button onclick="addToCart('Acer Nitro V Gaming Laptop 13th Gen Intel Core Rtx',73999)" style="background-color: #007bff; color: white; border: none; border-radius: 5px; padding: 10px; cursor: pointer;">Add to Cart</button>
+    </div>
+    <div class="product" style="border: 1px solid #ddd; border-radius: 8px; padding: 10px; background-color: #fff; width: 250px;">
+      <img src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcSw_PghknrYPY2rMgkfAKOQ-vWIzVppbZaLS8NhDjx4ofAF8wXEPkXKddlKpxBbf6nOIZkV9XRUkBGUzN7w_YpKwBu6XXRxluapvmycwsK3L35u3CfgCoG5" alt="Apple TV HD" style="width: 100%; border-radius: 8px;">
+      <p style="font-weight: bold; margin: 10px 0;">Apple TV HD</p>
+      <span style="color: red;">10% OFF</span>
+      <p style="font-size: 18px; color: #333;">₹ 12,999</p>
+      <button onclick="addToCart('Apple TV HD',12999)" style="background-color: #007bff; color: white; border: none; border-radius: 5px; padding: 10px; cursor: pointer;">Add to Cart</button>
+    </div>
+    <div class="product" style="border: 1px solid #ddd; border-radius: 8px; padding: 10px; background-color: #fff; width: 250px;">
+      <img src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcTTIOcscXBiEaddTT2tglbGLpX7ET8fXHCTB_gK7AWCS7JiKQBGcGW0_iz4BpdT3B7bPaUsdOI_yMcmNJgM2D0mbV-Zxn9zxOX9-Jue9WGZuM3tLPtSnQDEIQ" alt="Skullcandy PLYR Wireless Gaming Headset" style="width: 100%; border-radius: 8px;">
+      <p style="font-weight: bold; margin: 10px 0;">Skullcandy PLYR Wireless Gaming Headset</p>
+      <span style="color: red;">10% OFF</span>
+      <p style="font-size: 18px; color: #333;">₹ 8,999</p>
+      <button onclick="addToCart('Skullcandy PLYR Wireless Gaming Headset',8999)" style="background-color: #007bff; color: white; border: none; border-radius: 5px; padding: 10px; cursor: pointer;">Add to Cart</button>
+     </div>
+     <div class="product" style="border: 1px solid #ddd; border-radius: 8px; padding: 10px; background-color: #fff; width: 250px;">
+      <img src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcTmGEtVh11xcp4bHyzcvH_H4qre_h2ulMXMBiVC_OWrqOHkkk9sl2TrMhFHkC-njPjFlsuWxyQz-VhLSvnazrlVvXK9wv3HkYNjOGlLGA8GP_wNprE-LJb3nQ" alt="Asus ProArt PZ13 OLED HT5306QA-LX402WS" style="width: 100%; border-radius: 8px;">
+      <p style="font-weight: bold; margin: 10px 0;">Asus ProArt PZ13 OLED HT5306QA-LX402WS</p>
+      <span style="color: red;">10% OFF</span>
+      <p style="font-size: 18px; color: #333;">₹ 1,20,999</p>
+      <button onclick="addToCart('Asus ProArt PZ13 OLED HT5306QA-LX402WS',120999)" style="background-color: #007bff; color: white; border: none; border-radius: 5px; padding: 10px; cursor: pointer;">Add to Cart</button>
+    </div>
+    <div class="product" style="border: 1px solid #ddd; border-radius: 8px; padding: 10px; background-color: #fff; width: 250px;">
+      <img src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcToRi3zw5sVRzi-z935_-fmoXGDeZull3tWx_DEaKp3NjYSwTK1y713mbyg0L-D3XJrbNO2LpkOR2yzRywjZoxRCdQgVYjtq2gWhOW3GMxwZ892JwuAXuht3w" alt="Noise Pro 6 Smart Watch" style="width: 100%; border-radius: 8px;">
+      <p style="font-weight: bold; margin: 10px 0;">Noise Pro 6 Smart Watch</p>
+      <span style="color: red;">10% OFF</span>
+      <p style="font-size: 18px; color: #333;">₹ 3,999</p>
+      <button onclick="addToCart('Noise Pro 6 Smart Watch',3999)" style="background-color: #007bff; color: white; border: none; border-radius: 5px; padding: 10px; cursor: pointer;">Add to Cart</button>
+    </div>
+    <div class="product" style="border: 1px solid #ddd; border-radius: 8px; padding: 10px; background-color: #fff; width: 250px;">
+      <img src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcTVkjX0tba7DxybGLMcTCiDl6opD0owIQIK4zlcJMWm8vRBu90XyjNSwRE8VtpUs51wvBaMS8vRMJK-cpRE360gBzuwEM3qPFQpwFYrXRh_oPgllWhoWcSoovI" alt="Boat Stone 350 Pro/358 Pro 14 W Bluetooth Speaker" style="width: 100%; border-radius: 8px;">
+      <p style="font-weight: bold; margin: 10px 0;">Boat Stone 350 Pro/358 Pro 14 W Bluetooth Speaker</p>
+      <span style="color: red;">10% OFF</span>
+      <p style="font-size: 18px; color: #333;">₹ 1,499</p>
+      <button onclick="addToCart('Boat Stone 350 Pro/358 Pro 14 W Bluetooth Speaker',1499)" style="background-color: #007bff; color: white; border: none; border-radius: 5px; padding: 10px; cursor: pointer;">Add to Cart</button>
+    </div>
+    <div class="product" style="border: 1px solid #ddd; border-radius: 8px; padding: 10px; background-color: #fff; width: 250px;">
+      <img src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQfQCywfshoUY0bNc_ePNTYPDBbepHk9X6IyTbLRfhM8_4znsBr5B9sREbFS2c3Bw1nEkTCpoFy66K3NJRWGO-Skoki4zNmEALTuJ3iVm6b8Cr6xiVyhpejPg" alt="boAt Rockerz 450 On-Ear Bluetooth Headphone" style="width: 100%; border-radius: 8px;">
+      <p style="font-weight: bold; margin: 10px 0;">boAt Rockerz 450 On-Ear Bluetooth Headphone</p>
+      <span style="color: red;">10% OFF</span>
+      <p style="font-size: 18px; color: #333;">₹ 1,499</p>
+      <button onclick="addToCart('boAt Rockerz 450 On-Ear Bluetooth Headphone',1499)" style="background-color: #007bff; color: white; border: none; border-radius: 5px; padding: 10px; cursor: pointer;">Add to Cart</button>
+    </div>
+    <div class="product" style="border: 1px solid #ddd; border-radius: 8px; padding: 10px; background-color: #fff; width: 250px;">
+      <img src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcQ4dKPIyoKoJSe620RnEQHF-xiIwWcE2t3xBx7XRiDi_td2ZXG87gNUKQAOnvJ4fnsi2Z0jArP_JIkneAgk3H5WNIwvRBI--ICqqM1GzhfElGsErCPHYnLJkg" alt="HP Victus AMD Ryzen 7 Octa Core 8845HS - (16 GB/1 TB SSD)" style="width: 100%; border-radius: 8px;">
+      <p style="font-weight: bold; margin: 10px 0;">HP Victus AMD Ryzen 7 Octa Core 8845HS - (16 GB/1 TB SSD)</p>
+      <span style="color: red;">10% OFF</span>
+      <p style="font-size: 18px; color: #333;">₹ 88,999</p>
+      <button onclick="addToCart('HP Victus AMD Ryzen 7 Octa Core',88999)" style="background-color: #007bff; color: white; border: none; border-radius: 5px; padding: 10px; cursor: pointer;">Add to Cart</button>
+    </div>
+    <div class="product" style="border: 1px solid #ddd; border-radius: 8px; padding: 10px; background-color: #fff; width: 250px;">
+      <img src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcRg2jjefK73B0j--JR1NxqEoXb4YDLeyteM6ZZQ9kqUEIzSQIypAYfXvnjWznp3-xOvvDloU1zfmKXmyr-whJN1yeBk1jJ84PWksuP5lxMbj22NfzNjQpXWxA" alt="boAt Airdopes Joy Wireless Earbuds" style="width: 100%; border-radius: 8px;">
+      <p style="font-weight: bold; margin: 10px 0;">boAt Airdopes Joy Wireless Earbuds</p>
+      <span style="color: red;">10% OFF</span>
+      <p style="font-size: 18px; color: #333;">₹ 2,499</p>
+      <button onclick="addToCart('boAt Airdopes Joy Wireless Earbuds',2499)" style="background-color: #007bff; color: white; border: none; border-radius: 5px; padding: 10px; cursor: pointer;">Add to Cart</button>
+    </div>
+    <div class="product" style="border: 1px solid #ddd; border-radius: 8px; padding: 10px; background-color: #fff; width: 250px;">
+      <img src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcS-CRjZs-ZyfsdhlK2soMy5XDMAWHXFiGL3FBxk_k3BzYKCnwUJ1hPNHty64iyb6UY3r8oC5napvEhzywOQly1x9y_jXjbakHEYMpaCSrWiDwekFhn07vU0sg" alt="Mac Mini Apple M2 chip CPU and GPU" style="width: 100%; border-radius: 8px;">
+      <p style="font-weight: bold; margin: 10px 0;">Mac Mini Apple M2 chip CPU and GPU</p>
+      <span style="color: red;">10% OFF</span>
+      <p style="font-size: 18px; color: #333;">₹ 49,999</p>
+      <button onclick="addToCart('Mac Mini Apple M2 chip CPU and GPU',49999)" style="background-color: #007bff; color: white; border: none; border-radius: 5px; padding: 10px; cursor: pointer;">Add to Cart</button>
+    </div>
+    <div class="product" style="border: 1px solid #ddd; border-radius: 8px; padding: 10px; background-color: #fff; width: 250px;">
+      <img src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcScVjU8YuKUz2AXkwUWlZrd6c8YdobrR8jnyh6FHwqBcVwwLZW_UxaFdgwQQCM296DUs3ujsVoaiAwf33MjpYZp9y8z169Bx4Vf7xXG20yU5vcmuqtxNuMNWA" alt="Asus ROG Phone 7" style="width: 100%; border-radius: 8px;">
+      <p style="font-weight: bold; margin: 10px 0;">Asus ROG Phone 7</p>
+      <span style="color: red;">10% OFF</span>
+      <p style="font-size: 18px; color: #333;">₹ 1,93,999</p>
+      <button onclick="addToCart('Asus ROG Phone 7',193999)" style="background-color: #007bff; color: white; border: none; border-radius: 5px; padding: 10px; cursor: pointer;">Add to Cart</button>
+    </div>
+    <div class="product" style="border: 1px solid #ddd; border-radius: 8px; padding: 10px; background-color: #fff; width: 250px;">
+      <img src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTdNKEdlQM7U-uIYGqq_mvKYZJNCBKW9eYuMCiWnaMWxGDnmEOesQu5jSvt84YEZE7cARI4Lqa4z_ZBaUI5UdastjCc8ZRwgu1_oGbUcWnBKQZoTT65_Pxl" alt="Apple iPhone 14 Pro" style="width: 100%; border-radius: 8px;">
+      <p style="font-weight: bold; margin: 10px 0;">Apple iPhone 14 Pro</p>
+      <span style="color: red;">10% OFF</span>
+      <p style="font-size: 18px; color: #333;">₹ 60,999</p>
+      <button onclick="addToCart('Apple iPhone 14 Pro',60999)" style="background-color: #007bff; color: white; border: none; border-radius: 5px; padding: 10px; cursor: pointer;">Add to Cart</button>
+    </div>
+    <div class="product" style="border: 1px solid #ddd; border-radius: 8px; padding: 10px; background-color: #fff; width: 250px;">
+      <img src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcSzYxLc8OC825VO2QrF4B7M6th6_50mOCUAlb8kvp-4Z23PB6yxxgJ14OKm7ySme9VQA0zj-cOYQFlL6ZV11KwnIEoTpSyIKRj2-hX5uDhb14EGnbQGAJ5bbw" alt="Apple iPhone 16 Pro Max" style="width: 100%; border-radius: 8px;">
+      <p style="font-weight: bold; margin: 10px 0;">Apple iPhone 16 Pro Max</p>
+      <span style="color: red;">10% OFF</span>
+      <p style="font-size: 18px; color: #333;">₹ 1,35,999</p>
+      <button onclick="addToCart('Apple iPhone 16 Pro Max',135999)" style="background-color: #007bff; color: white; border: none; border-radius: 5px; padding: 10px; cursor: pointer;">Add to Cart</button>
+    </div>
+    <div class="product" style="border: 1px solid #ddd; border-radius: 8px; padding: 10px; background-color: #fff; width: 250px;">
+      <img src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQWuQ_PYdx-P2VgKd6AAJCySyUE1LiGP_TOIW1qfK3qzs3GLLUU9a9UvvTKO0Pn3jX6bXXY0gl_mGs_ZRh8MmAEuGYo_jNKuzF7Ed-DBD40VsYlfdOATUPF" alt="Samsung Galaxy S21 FE 5G" style="width: 100%; border-radius: 8px;">
+      <p style="font-weight: bold; margin: 10px 0;">Samsung Galaxy S21 FE 5G</p>
+      <span style="color: red;">10% OFF</span>
+      <p style="font-size: 18px; color: #333;">₹ 30,999</p>
+      <button onclick="addToCart('Samsung Galaxy S21 FE 5G',30999)" style="background-color: #007bff; color: white; border: none; border-radius: 5px; padding: 10px; cursor: pointer;">Add to Cart</button>
+    </div>
+    <div class="product" style="border: 1px solid #ddd; border-radius: 8px; padding: 10px; background-color: #fff; width: 250px;">
+      <img src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcSpmUpySynQQqyd8meuhvb7xt8BepIlIv-93-loPIlKvWpHtgF-qrQHACG0adqkFBM1_C5K_EY6wGDRkyU56zIFIWZzBzcvo_JzvSIT7tKvBbyyoIOhPpSROrQ" alt="Xiaomi 15 Ultra" style="width: 100%; border-radius: 8px;">
+      <p style="font-weight: bold; margin: 10px 0;">Xiaomi 15 Ultra</p>
+      <span style="color: red;">10% OFF</span>
+      <p style="font-size: 18px; color: #333;">₹ 1,09,999</p>
+      <button onclick="addToCart('Xiaomi 15 Ultra',109999)" style="background-color: #007bff; color: white; border: none; border-radius: 5px; padding: 10px; cursor: pointer;">Add to Cart</button>
+    </div>
+    <div class="product" style="border: 1px solid #ddd; border-radius: 8px; padding: 10px; background-color: #fff; width: 250px;">
+      <img src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcS8w2uoByyPrTWuD9ed705rHRr0wesgqSlrPUnpnCw9jwh3gUxl0HiYWEFfMHo1bxWNlKNAJ4qmR_5KiXXvNRMVyCOfa0v7vwrm07HmDQ0KvF3l6hfJSzp8" alt="Boult Bassbox X60 2.1 Channel Soundbar" style="width: 100%; border-radius: 8px;">
+      <p style="font-weight: bold; margin: 10px 0;">Boult Bassbox X60 2.1 Channel Soundbar</p>
+      <span style="color: red;">10% OFF</span>
+      <p style="font-size: 18px; color: #333;">₹ 9,999</p>
+      <button onclick="addToCart('Boult Bassbox X60 2.1 Channel Soundbar',9999)" style="background-color: #007bff; color: white; border: none; border-radius: 5px; padding: 10px; cursor: pointer;">Add to Cart</button>
+    </div>
+    <div class="product" style="border: 1px solid #ddd; border-radius: 8px; padding: 10px; background-color: #fff; width: 250px;">
+      <img src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcR_2GHrOJS2RUJZsGU_yegozUXyInzbfeDAv-uGAOz9R4vtENp9GtNYrj2_NkAT3k7_A0BwKkUFG9bvXeoUTYB6Yv5b_vdC5zwrvzwyDiOulF44MaEa03Ug" alt="Hammer Beatbox Bluetooth Soundbar" style="width: 100%; border-radius: 8px;">
+      <p style="font-weight: bold; margin: 10px 0;">Hammer Beatbox Bluetooth Soundbar</p>
+      <span style="color: red;">10% OFF</span>
+      <p style="font-size: 18px; color: #333;">₹ 1,999</p>
+      <button onclick="addToCart('Hammer Beatbox Bluetooth Soundbar',1999)" style="background-color: #007bff; color: white; border: none; border-radius: 5px; padding: 10px; cursor: pointer;">Add to Cart</button>
+    </div>
+    <div class="product" style="border: 1px solid #ddd; border-radius: 8px; padding: 10px; background-color: #fff; width: 250px;">
+      <img src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcTMt3tpRDjxSn6S39Y-_ohqNE_Iv1me_AQ4VbVqifLGdDN6erQMVSsBN70K9bNSWAfy4NGclEu2Stvf0WkkN3l-6QDTiuRbuxoe2GC8QVWe7oLJ6L2hzZdI7Q" alt="boAt Aavante Bar Aaupera Bluetooth Soundbar" style="width: 100%; border-radius: 8px;">
+      <p style="font-weight: bold; margin: 10px 0;">boAt Aavante Bar Aaupera Bluetooth Soundbar</p>
+      <span style="color: red;">10% OFF</span>
+      <p style="font-size: 18px; color: #333;">₹ 11,999</p>
+      <button onclick="addToCart('boAt Aavante Bar Aaupera Bluetooth Soundbar',11999)" style="background-color: #007bff; color: white; border: none; border-radius: 5px; padding: 10px; cursor: pointer;">Add to Cart</button>
+    </div>
+    <div class="product" style="border: 1px solid #ddd; border-radius: 8px; padding: 10px; background-color: #fff; width: 250px;">
+      <img src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTfUmXHCKki9BQbla3txjrVVs91WusflmnZmXuvk871wCqZ8dKjbUfC03WbwsmZVmXfa7yZJoWMmR36698rDtq3OuuFM7Xt-FcnuaHpjk4S_OY7K9almGTT4gI" alt="Boult Bassbox X30 Soundbar" style="width: 100%; border-radius: 8px;">
+      <p style="font-weight: bold; margin: 10px 0;">Boult Bassbox X30 Soundbar</p>
+      <span style="color: red;">10% OFF</span>
+      <p style="font-size: 18px; color: #333;">₹ 2,999</p>
+      <button onclick="addToCart('Boult Bassbox X30 Soundbar',2999)" style="background-color: #007bff; color: white; border: none; border-radius: 5px; padding: 10px; cursor: pointer;">Add to Cart</button>
+    </div>
+    <div class="product" style="border: 1px solid #ddd; border-radius: 8px; padding: 10px; background-color: #fff; width: 250px;">
+      <img src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcS-OMfD6uw5qbDd2hlk3DEvzjZn5XiEayEEBJdlI8R7Dlwwpva3hn-peH2T7T9i11PUBrlcSRvarevafZwfBxq94vbAc0I9LTxrBv6huFhrYP59DD9X4M2GJg" alt="boAt Aavante Bar 950 Bluetooth Soundbar" style="width: 100%; border-radius: 8px;">
+      <p style="font-weight: bold; margin: 10px 0;">boAt Aavante Bar 950 Bluetooth Soundbar</p>
+      <span style="color: red;">10% OFF</span>
+      <p style="font-size: 18px; color: #333;">₹ 2,999</p>
+      <button onclick="addToCart('boAt Aavante Bar 950 Bluetooth Soundbar',2999)" style="background-color: #007bff; color: white; border: none; border-radius: 5px; padding: 10px; cursor: pointer;">Add to Cart</button>
+    </div>
+    <div class="product" style="border: 1px solid #ddd; border-radius: 8px; padding: 10px; background-color: #fff; width: 250px;">
+      <img src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcRRv9AznoRClGFlYsY0jhfv9ug6X5Qg6eXlSF0OYENKkgVoJJfvGBOFYpvplMGcgeNf07YvsHaqFryDaE4XiR6e97Fsb5nv1oKcdlmWmm0HGGyMB6FYQ3dXYyI" alt="Ptron Fusion RB 18W Bluetooth Soundbar" style="width: 100%; border-radius: 8px;">
+      <p style="font-weight: bold; margin: 10px 0;">Ptron Fusion RB 18W Bluetooth Soundbar</p>
+      <span style="color: red;">10% OFF</span>
+      <p style="font-size: 18px; color: #333;">₹ 999</p>
+      <button onclick="addToCart('Ptron Fusion RB 18W Bluetooth Soundbar',999)" style="background-color: #007bff; color: white; border: none; border-radius: 5px; padding: 10px; cursor: pointer;">Add to Cart</button>
+    </div>
+    <div class="product" style="border: 1px solid #ddd; border-radius: 8px; padding: 10px; background-color: #fff; width: 250px;">
+      <img src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcR4Y7DpDl_7E9KJt9t2PYm1JnEhXpI0QOqbJB-qcBg8Qq33aDJzuysyNrdR9uNpiRggdUWByFXsk55qs1pB60ERlrLbn7VqNk-Q00oQ4EJ5_QmHNjzcK2ZXvgs" alt="mazon basics SB18R 18W Bluetooth Soundbar" style="width: 100%; border-radius: 8px;">
+      <p style="font-weight: bold; margin: 10px 0;">mazon basics SB18R 18W Bluetooth Soundbar</p>
+      <span style="color: red;">10% OFF</span>
+      <p style="font-size: 18px; color: #333;">₹ 999</p>
+      <button onclick="addToCart('mazon basics SB18R 18W Bluetooth Soundbar',999)" style="background-color: #007bff; color: white; border: none; border-radius: 5px; padding: 10px; cursor: pointer;">Add to Cart</button>
+    </div>   
+    </div>
+
+    <footer style="background-color: #333; color: white; padding: 20px; text-align: center;">
+        <h2>Saksham</h2>
+        <p>Your one-stop shop for all things tech</p>
+        <h4>Newsletter</h4>
+        <p>Subscribe to get special offers and updates</p>
+        <input type="email" placeholder="Enter your email" style="padding: 10px; width: 250px; margin-right: 10px;">
+        <button style="background-color: #007bff; color: white; border: none; border-radius: 5px; padding: 10px; cursor: pointer;">Subscribe</button>
+    </footer>
+    <script>
+      // Load existing cart from localStorage or start with empty array
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    
+      // Update cart count on load
+      document.addEventListener("DOMContentLoaded", () => {
+        updateCartCount();
+      });
+    
+      function addToCart(productName, price) {
+        // Check if product is already in cart
+        const existing = cart.find(item => item.name === productName);
+        if (existing) {
+          existing.quantity += 1;
+        } else {
+          cart.push({ name: productName, price: price, quantity: 1 });
+        }
+    
+        // Save updated cart to localStorage
+        localStorage.setItem('cart', JSON.stringify(cart));
+    
+        updateCartCount();
+        alert(`${productName} added to cart!`);
+      }
+    
+      function updateCartCount() {
+        const count = cart.reduce((sum, item) => sum + item.quantity, 0);
+        document.getElementById('cart-count').innerText = `Cart (${count})`;
+      }
+    </script>
+    
+</body>
+</html>
+<div class="br-offTtl br-offTtlOneLine b_primtxt" title="Lenovo V15 Gen 5, Custom Business Laptop (15&quot;, 8GB RAM/256GB SSD, Intel Core 5), 83GWCTO1WWIN1"><span title="Lenovo V15 Gen 5, Custom Business Laptop (15&quot;, 8GB RAM/256GB SSD, Intel Core 5), 83GWCTO1WWIN1">Lenovo V15 Gen 5, Custo…</span></div>
